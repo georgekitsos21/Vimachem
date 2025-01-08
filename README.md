@@ -27,5 +27,11 @@ Clone this repository to your local machine using the following command:
 
 https://github.com/georgekitsos21/Vimachem.git
 
-###2.Happy New Year
+### 2. Run the tests from the testRunner
+
+### 3. Analyse the results from the Reports.
+
+### 4. Happy new year
+
+### Note:For your convience I have added a readfile inside the project as well.
 
