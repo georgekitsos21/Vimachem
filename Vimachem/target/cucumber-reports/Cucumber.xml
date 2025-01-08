@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="6.994" tests="4" skipped="0" failures="0" errors="0">
+<testcase classname="User Registration" name="Register a new user successfully" time="1.564">
+<system-out><![CDATA[
+Given I am on the sign-up page..............................................passed
+When I enter valid registration details.....................................passed
+And I click the submit button...............................................passed
+Then I should be registered and redirected to the contact page..............passed
+]]></system-out>
+</testcase>
+<testcase classname="Adding a new contact and validating it on the contact details page" name="Add a new contact and validate it on contact details page" time="2.486">
+<system-out><![CDATA[
+When I press the add new contact button.....................................passed
+Then I navigate to Add Contact page.........................................passed
+When I fill all the required fields.........................................passed
+And I press the submit button...............................................passed
+Then I navigate to Contact List Page and I should see the particular contact.passed
+]]></system-out>
+</testcase>
+<testcase classname="Adding a new contact and validating it on the contact details page" name="Add a new contact with invalid type of birthday date and validate the error message" time="1.787">
+<system-out><![CDATA[
+When I go to Add Contact page...............................................passed
+And I fill all the required fields with invalid date of birth...............passed
+And I press the submit button...............................................passed
+Then I should see the error message for invalid type of birthday date.......passed
+]]></system-out>
+</testcase>
+<testcase classname="Delete an existing contact and validating it" name="Delete a contact and validate that it should not be visible in the contacts" time="1.021">
+<system-out><![CDATA[
+When I go to Contact List Page..............................................passed
+When I navigate to Contact Details and delete the particular contact........passed
+Then I navigate back to the Contact Page....................................passed
+]]></system-out>
+</testcase>
+</testsuite>
