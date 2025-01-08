@@ -18,7 +18,7 @@ public class SignUpSteps extends BaseTests {
     public void addName() {
         signUpPage.fillFirstName("george");
         signUpPage.fillLastName("softareEngineer");
-        signUpPage.fillTheEmail("VimachemAssignment2k@test.com");
+        signUpPage.fillTheEmail("VimachemAssignment2k25@test.com");
         signUpPage.fillThePassword("Marcfit21");
     }
 

@@ -6,10 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.ConfigReader;
+import utils.MapHelper;
 import utils.WaitHelper;
 import utils.WindowManager;
 
 import java.util.List;
+import java.util.Map;
 
 public class ContactPage {
 
@@ -61,32 +63,30 @@ public class ContactPage {
 
             for (WebElement row : contactRows) {
                 List<WebElement> columns = row.findElements(By.tagName("td"));
+                Map<String, String> contactDetails = MapHelper.extractContactDetails(columns);  // Extract details using MapHelper
 
-                String contactNameInRow = columns.get(1).getText().trim();
-                String birthDateInRow = columns.get(2).getText().trim();
-                String emailInRow = columns.get(3).getText().trim();
-                String phoneInRow = columns.get(4).getText().trim();
-                String addressInRow = columns.get(5).getText().trim();
-                String cityStatePostalInRow = columns.get(6).getText().trim();
-                String countryInRow = columns.get(7).getText().trim();
-
-                if (contactNameInRow.equals(contactName) &&
-                        birthDateInRow.equals(birthDate) &&
-                        emailInRow.equals(email) &&
-                        phoneInRow.equals(phone) &&
-                        addressInRow.equals(address) &&
-                        cityStatePostalInRow.equals(cityStatePostal) &&
-                        countryInRow.equals(country)) {
+                if (compareContactDetails(contactDetails, contactName, birthDate, email, phone, address, cityStatePostal, country)) {
                     logger.info("Contact found in the table.");
                     return true;
                 }
             }
+
             logger.info("Contact not found in the table.");
             return false;
         } catch (Exception e) {
             logger.error("Error while checking for contact in the table. Details: {}", e.getMessage(), e);
             return false;
         }
+    }
+
+    private boolean compareContactDetails(Map<String, String> contactDetails, String contactName, String birthDate, String email, String phone, String address, String cityStatePostal, String country) {
+        return contactDetails.get("Name").equals(contactName) &&
+                contactDetails.get("DOB").equals(birthDate) &&
+                contactDetails.get("Email").equals(email) &&
+                contactDetails.get("Phone").equals(phone) &&
+                contactDetails.get("Address").equals(address) &&
+                contactDetails.get("City/State/Postal").equals(cityStatePostal) &&
+                contactDetails.get("Country").equals(country);
     }
 
     public void goToAddANewContactPage() {
