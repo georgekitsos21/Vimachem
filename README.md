@@ -1,4 +1,4 @@
-# Vimachem# Automation Test Suite for Contact List Application
+# Vimachem Automation Test Suite for Contact List Application
 
 This repository contains an automation test suite for the Contact List application hosted on [Thinking Tester](https://thinking-tester-contact-list.herokuapp.com/). The suite is written in Java using **Cucumber**, **JUnit**, and **Selenium** for browser automation.
 
