@@ -29,7 +29,11 @@ https://github.com/georgekitsos21/Vimachem.git
 
 ### 2. Run the tests from the testRunner
 
+You can easily run the test from the testRunner or using mvn test.
+
 ### 3. Analyse the results from the Reports.
+
+I have added 2 types of reports PDF & html file as well.
 
 ### 4. Happy new year
 
